@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using Toolivahendus2.Models;
 
 namespace Toolivahendus2.Controllers
 {
+    [Authorize]
     public class TooliVahendusController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -44,6 +46,7 @@ namespace Toolivahendus2.Controllers
         }
 
         // GET: TooliVahendus/Create
+        [AllowAnonymous]
         public IActionResult Create()
         {
             return View();
@@ -53,6 +56,7 @@ namespace Toolivahendus2.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Eesnimi,Perekonnanimi,Toon,Tellimuskogus,Firmanimi,Firmaemail")] TooliVahendus tooliVahendus)
         {
