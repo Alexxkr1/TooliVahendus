@@ -162,3 +162,7 @@ C:\Users\opilane\Source\repos\Toolivahendus2\Toolivahendus2\obj\Debug\net5.0\Raz
 C:\Users\opilane\Source\repos\Toolivahendus2\Toolivahendus2\obj\Debug\net5.0\Razor\Views\TooliVahendus\Details.cshtml.g.cs
 C:\Users\opilane\Source\repos\Toolivahendus2\Toolivahendus2\obj\Debug\net5.0\Razor\Views\TooliVahendus\Edit.cshtml.g.cs
 C:\Users\opilane\Source\repos\Toolivahendus2\Toolivahendus2\obj\Debug\net5.0\Razor\Views\TooliVahendus\Index.cshtml.g.cs
+C:\Users\opilane\Source\repos\Toolivahendus2\Toolivahendus2\obj\Debug\net5.0\Razor\Views\ToolidValmistusel\Index.cshtml.g.cs
+C:\Users\opilane\Source\repos\Toolivahendus2\Toolivahendus2\obj\Debug\net5.0\Razor\Views\ToolidValmistusel\Create.cshtml.g.cs
+C:\Users\opilane\Source\repos\Toolivahendus2\Toolivahendus2\obj\Debug\net5.0\Razor\Views\ToolidValmistusel\Details.cshtml.g.cs
+C:\Users\opilane\Source\repos\Toolivahendus2\Toolivahendus2\obj\Debug\net5.0\Razor\Views\ToolidValmistusel\Edit.cshtml.g.cs
