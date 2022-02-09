@@ -24,10 +24,11 @@ namespace Toolivahendus2.Controllers
         // GET: TooliVahendus
         public async Task<IActionResult> Index()
         {
-            return View(await _context.TooliVahendus.ToListAsync());
+            return View(await _context.ToolidValmistusel.ToListAsync());
         }
 
         // GET: TooliVahendus/Details/5
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,7 +36,7 @@ namespace Toolivahendus2.Controllers
                 return NotFound();
             }
 
-            var tooliVahendus = await _context.TooliVahendus
+            var tooliVahendus = await _context.ToolidValmistusel
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (tooliVahendus == null)
             {
@@ -77,7 +78,7 @@ namespace Toolivahendus2.Controllers
                 return NotFound();
             }
 
-            var tooliVahendus = await _context.TooliVahendus.FindAsync(id);
+            var tooliVahendus = await _context.ToolidValmistusel.FindAsync(id);
             if (tooliVahendus == null)
             {
                 return NotFound();
@@ -90,7 +91,7 @@ namespace Toolivahendus2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Eesnimi,Perekonnanimi,Toon,Tellimuskogus,Firmanimi,Firmaemail")] TooliVahendus tooliVahendus)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Eesnimi,Perekonnanimi,Toon,Tellimuskogus,Firmanimi,Firmaemail,Valminudkogus")] TooliVahendus tooliVahendus)
         {
             if (id != tooliVahendus.Id)
             {
@@ -128,7 +129,7 @@ namespace Toolivahendus2.Controllers
                 return NotFound();
             }
 
-            var tooliVahendus = await _context.TooliVahendus
+            var tooliVahendus = await _context.ToolidValmistusel
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (tooliVahendus == null)
             {
@@ -143,15 +144,15 @@ namespace Toolivahendus2.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var tooliVahendus = await _context.TooliVahendus.FindAsync(id);
-            _context.TooliVahendus.Remove(tooliVahendus);
+            var tooliVahendus = await _context.ToolidValmistusel.FindAsync(id);
+            _context.ToolidValmistusel.Remove(tooliVahendus);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool TooliVahendusExists(int id)
         {
-            return _context.TooliVahendus.Any(e => e.Id == id);
+            return _context.ToolidValmistusel.Any(e => e.Id == id);
         }
     }
 }

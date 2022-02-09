@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,5 +15,8 @@ namespace Toolivahendus2.Models
         public int Tellimuskogus { get; set; }
         public string Firmanimi { get; set; }
         public string Firmaemail { get; set; }
+        [Range(0, 20)]
+        public int Valminudkogus { get; set; }=-0;
+
     }
 }

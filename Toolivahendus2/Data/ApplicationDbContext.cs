@@ -13,6 +13,7 @@ namespace Toolivahendus2.Data
             : base(options)
         {
         }
+        public DbSet<Toolivahendus2.Models.TooliVahendus> ToolidValmistusel { get; set; }
         public DbSet<Toolivahendus2.Models.TooliVahendus> TooliVahendus { get; set; }
     }
 }
