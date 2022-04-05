@@ -43,11 +43,9 @@ namespace Toolivahendus2.Controllers
             {
                 return NotFound();
             }
+            tooliVahendus.Valminudkogus++;
 
-            
-
-
-            return View(tooliVahendus);
+            return RedirectToAction(tooliVahendus);
         }
 
 
