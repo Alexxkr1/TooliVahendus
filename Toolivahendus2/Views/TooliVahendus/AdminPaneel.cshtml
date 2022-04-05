@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<Toolivahendus2.Models.TooliVahendus>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Admin Paneel";
 }
 
-<h1>Index</h1>
+<h1>Admin paneel</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -62,9 +59,22 @@
                     @Html.DisplayFor(modelItem => item.Valminudkogus)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    @if ((item.Tellimuskogus == item.Valminudkogus))
+                    {
+                        <a asp-action="Andmed" asp-route-id="@item.Id">Andmed</a>
+                        <a asp-action="Kustutamine" asp-route-id="@item.Id">Eemaldamine</a>
+                    }
+                    else
+                    {
+
+                        <a asp-action="Muutmine" asp-route-id="@item.Id">Muuda</a>
+                        <a asp-action="Andmed" asp-route-id="@item.Id">Andmed</a>
+                        <a asp-action="Kustutamine" asp-route-id="@item.Id">Eemaldamine</a>
+                        <a asp-action="IncreaseValue" asp-route-id="@item.Id">Uus tool</a>
+
+                        
+                    }
+                    
                 </td>
             </tr>
         }

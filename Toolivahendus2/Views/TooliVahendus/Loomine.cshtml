@@ -1,0 +1,65 @@
+﻿@model Toolivahendus2.Models.TooliVahendus
+
+@{
+    ViewData["Title"] = "Tellimuse vormistamine";
+}
+
+<h4>Tellimuse vormistamine</h4>
+
+<p>
+    Teie mugavuse huvides on kõik kaubad jagatud tootegruppidesse.
+    Teid huvitava toote saamiseks täitke vastavad lahtrid enda firma informatsiooniga. 
+    Juhul kui kliendil tekib küsimusi kauba omaduste kohta soovitame tal enne tellimuse vormistamist pöörduda www.TooliVahendus.ee konsultandi poole.
+</p>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Loomine">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Eesnimi" class="control-label"></label>
+                <input asp-for="Eesnimi" class="form-control" />
+                <span asp-validation-for="Eesnimi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Perekonnanimi" class="control-label"></label>
+                <input asp-for="Perekonnanimi" class="form-control" />
+                <span asp-validation-for="Perekonnanimi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Toon" class="control-label"></label>
+                <input asp-for="Toon" class="form-control" />
+                <span asp-validation-for="Toon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tellimuskogus" class="control-label"></label>
+                <input asp-for="Tellimuskogus" class="form-control" />
+                <span asp-validation-for="Tellimuskogus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Firmanimi" class="control-label"></label>
+                <input asp-for="Firmanimi" class="form-control" />
+                <span asp-validation-for="Firmanimi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Firmaemail" class="control-label"></label>
+                <input type="email" asp-for="Firmaemail" class="form-control" />
+                <span asp-validation-for="Firmaemail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Vormista tellimus" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Tagasi kodu lehele</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "31uu6ZxNeDEBNYejYfEQkhw/guNejn0RzUr7e1+6WCPFmomcwhZ5/IVUxKDD6mdIA66iE5Q+fnyd5vp/rV0Z8A==",
+  "dgSpecHash": "SooZetHfNT16aH9kqW86AfwPWgcq4WFtYAcI2V/DygTkrbnD7JBay+JjNKLMi/RqQVla5hIrrdAuWIyTYAfUNw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\opilane\\Source\\repos\\Toolivahendus2\\Toolivahendus2\\Toolivahendus2.csproj",
+  "projectFilePath": "C:\\Users\\opilane\\Source\\repos\\TooliVahendus\\Toolivahendus2\\Toolivahendus2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\opilane\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.13\\microsoft.aspnetcore.cryptography.internal.5.0.13.nupkg.sha512",
