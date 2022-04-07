@@ -30,53 +30,81 @@
             <th>
                 @Html.DisplayNameFor(model => model.Valminudkogus)
             </th>
+            <th>
+               Veel Valmistida
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+        @{
+            var count = 0;
+        }
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Eesnimi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Perekonnanimi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Toon)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Tellimuskogus)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Firmanimi)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Firmaemail)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Valminudkogus)
-                </td>
-                <td>
-                    @if ((item.Tellimuskogus == item.Valminudkogus))
-                    {
-                        <a asp-action="Andmed" asp-route-id="@item.Id">Andmed</a>
-                        <a asp-action="Kustutamine" asp-route-id="@item.Id">Eemaldamine</a>
-                    }
-                    else
-                    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eesnimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Perekonnanimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Toon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tellimuskogus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firmanimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firmaemail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valminudkogus)
+            </td>
+            <td>
+                @{
+                    var teha = item.Tellimuskogus - item.Valminudkogus;
+                    count += teha;
 
-                        <a asp-action="Muutmine" asp-route-id="@item.Id">Muuda</a>
-                        <a asp-action="Andmed" asp-route-id="@item.Id">Andmed</a>
-                        <a asp-action="Kustutamine" asp-route-id="@item.Id">Eemaldamine</a>
-                        <a asp-action="IncreaseValue" asp-route-id="@item.Id">Uus tool</a>
+                } 
+                @(teha)
+            </td>
+            <td>
+                <a asp-action="Andmed" asp-route-id="@item.Id">Andmed</a> |
+                <a asp-action="Muutmine" asp-route-id="@item.Id">Muuda</a> |
+                @if ((item.Tellimuskogus != item.Valminudkogus))
+                {
+                    <a asp-action="IncreaseValue" asp-route-id="@item.Id">Uus tool</a>
+                }
+                @if (item.Valminudkogus == 0 || item.Valminudkogus == item.Tellimuskogus)
+                {
 
-                        
-                    }
-                    
-                </td>
-            </tr>
+                    <a asp-action="Kustutamine" asp-route-id="@item.Id">Eemaldamine</a> @:|
+
+
+                }
+
+
+
+
+            </td>
+        </tr>
         }
+        
+        @*kõik kokku
+        ja palju teha*@
+
+        <tr>
+            <th colspan="6"></th>
+            <th>
+                Kokku teha:
+            </th>
+            <th>@(count)</th>
+            <th></th>
+        </tr>
     </tbody>
 </table>
+

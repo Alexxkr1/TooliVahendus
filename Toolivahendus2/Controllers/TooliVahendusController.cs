@@ -43,9 +43,13 @@ namespace Toolivahendus2.Controllers
             {
                 return NotFound();
             }
-            tooliVahendus.Valminudkogus++;
 
-            return RedirectToAction(tooliVahendus);
+            tooliVahendus.Valminudkogus++;
+            _context.Update(tooliVahendus);
+            await _context.SaveChangesAsync();
+
+
+            return RedirectToAction(nameof(AdminPaneel));
         }
 
 
